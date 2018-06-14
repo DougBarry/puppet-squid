@@ -54,6 +54,7 @@ Parameters to the squid class almost map 1 to 1 to squid.conf parameters themsel
 * `error_directory` defaults to undef. [error_directory](http://www.squid-cache.org/Doc/config/error_directory/).
 * `err_page_stylesheet` defaults to undef. [err_page_stylesheet](http://www.squid-cache.org/Doc/config/err_page_stylesheet/).
 * `package_name` name of the squid package to manage, default depends on `$operatingsystem`
+* `package_ensure` the ensure value (as per Puppet's usual Package Class Attribute), default to 'present'. [package-attribute-ensure](https://puppet.com/docs/puppet/5.5/types/package.html#package-attribute-ensure).
 * `service_name` name of the squid service to manage, default depends on `$operatingsystem`
 * `max_filedescriptors` defaults to undef. [max_filedescriptors docs](http://www.squid-cache.org/Doc/config/max_filedescriptors/).
 * `workers` defaults to undef. [workers docs](http://www.squid-cache.org/Doc/config/workers/).
@@ -265,7 +266,7 @@ squid::snmp_access { 'monitoring hosts':
 }
 ```
 
-Adds a squid.conf line 
+Adds a squid.conf line
 
 ```
 # snmp_access fragment for monitoring hosts
@@ -297,7 +298,7 @@ squid::icp_access { 'our_networks hosts':
 }
 ```
 
-Adds a squid.conf line 
+Adds a squid.conf line
 
 ```
 icp_access allow our_networks hosts
@@ -491,7 +492,7 @@ squid::ssl_bump { 'all':
 }
 ```
 
-Adds a squid.conf line 
+Adds a squid.conf line
 
 ```
 ssl_bump bump all
@@ -513,7 +514,7 @@ squid::sslproxy_cert_error { 'all':
 }
 ```
 
-Adds a squid.conf line 
+Adds a squid.conf line
 
 ```
 sslproxy_cert_error allow all

@@ -4,6 +4,7 @@
 
 class squid::params {
 
+  $package_ensure                = 'present'
   $ensure_service                = 'running'
   $enable_service                = true
   $cache_mem                     = '256 MB'
